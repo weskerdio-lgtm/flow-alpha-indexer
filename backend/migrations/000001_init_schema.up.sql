@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS cursors (
+    id VARCHAR(100) PRIMARY KEY,
+    cursor_val TEXT NOT NULL,
+    block_num BIGINT NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 一个用于前期跑通数据流入的 Mock 表
+CREATE TABLE IF NOT EXISTS test_swaps (
+    id VARCHAR(255) PRIMARY KEY,
+    block_num BIGINT NOT NULL,
+    payload JSONB NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
